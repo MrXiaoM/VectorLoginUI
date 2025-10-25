@@ -1,0 +1,15 @@
+name: VectorLoginUI
+version: '${version}'
+main: top.mrxiaom.hologram.loginui.VectorLoginUI
+api-version: 1.19
+depend:
+  - VectorDisplays
+  - packetevents
+softdepend:
+  - PlaceholderAPI
+authors: [ MrXiaoM ]
+folia-supported: true
+commands:
+  vectorloginui:
+    description: 'The main command of VectorLoginUI'
+    aliases: [ vloginui, vlui ]
