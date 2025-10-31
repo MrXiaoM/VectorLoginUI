@@ -85,8 +85,8 @@ public class VectorLoginUI extends JavaPlugin {
         super.reloadConfig();
         FileConfiguration config = getConfig();
 
-        minPasswordLength = config.getInt("password-length.min", 3);
-        minPasswordLength = config.getInt("password-length.max", 20);
+        minPasswordLength = config.getInt("password-length.min", 8);
+        maxPasswordLength = config.getInt("password-length.max", 20);
     }
 
     public int getMinPasswordLength() {

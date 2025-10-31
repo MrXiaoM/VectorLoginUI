@@ -19,6 +19,7 @@ public class TerminalLogin extends AbstractKeyboardTerminal<TerminalLogin> {
     private String password = "";
     public TerminalLogin(VectorLoginUI plugin, @NotNull Player player) {
         super(plugin, player, "loginui_login_" + player.getName(), defineTerminalLoc(player), 15, 4);
+        this.initPages();
     }
 
     @Override

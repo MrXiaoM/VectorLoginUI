@@ -20,6 +20,7 @@ public class TerminalRegister extends AbstractKeyboardTerminal<TerminalRegister>
     private String password = null;
     public TerminalRegister(VectorLoginUI plugin, @NotNull Player player) {
         super(plugin, player, "loginui_register_" + player.getName(), defineTerminalLoc(player), 15, 4);
+        this.initPages();
     }
 
     @Override

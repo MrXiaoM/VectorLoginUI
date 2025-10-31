@@ -25,7 +25,9 @@ public class PlayerLoginListener implements Listener {
     @EventHandler
     public void onQuit(PlayerQuitEvent e) {
         Terminal<?> terminal = plugin.popTerminal(e.getPlayer().getName());
-        TerminalManager.inst().destroy(terminal);
+        if (terminal != null) {
+            TerminalManager.inst().destroy(terminal);
+        }
     }
 
     @EventHandler
@@ -45,11 +47,15 @@ public class PlayerLoginListener implements Listener {
 
     public void onRegister(Player player) {
         Terminal<?> terminal = plugin.popTerminal(player.getName());
-        TerminalManager.inst().destroy(terminal);
+        if (terminal != null) {
+            TerminalManager.inst().destroy(terminal);
+        }
     }
 
     public void onLogin(Player player) {
         Terminal<?> terminal = plugin.popTerminal(player.getName());
-        TerminalManager.inst().destroy(terminal);
+        if (terminal != null) {
+            TerminalManager.inst().destroy(terminal);
+        }
     }
 }

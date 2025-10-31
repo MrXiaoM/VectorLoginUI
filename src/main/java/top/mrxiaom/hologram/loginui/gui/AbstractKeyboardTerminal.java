@@ -36,10 +36,14 @@ public abstract class AbstractKeyboardTerminal<This extends AbstractKeyboardTerm
         this.plugin = plugin;
         this.labelInput = new Label("label_input");
 
-        addPage("keyboard", this::initPage);
-        applyPage("keyboard");
         addViewer(this.player = player);
     }
+
+    protected void initPages() {
+        addPage("keyboard", this::initPage);
+        applyPage("keyboard");
+    }
+
     protected static Location defineTerminalLoc(Player player) {
         Location eyeLocation = player.getEyeLocation().clone(); eyeLocation.setPitch(0);
         Location loc = player.getLocation().clone();
