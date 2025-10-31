@@ -33,6 +33,9 @@ public class PlayerLoginListener implements Listener {
                 Player player = viewers.get(0);
                 if (terminal.getLocation().distance(player.getLocation()) > 3) {
                     terminal.setLocation(AbstractKeyboardTerminal.defineTerminalLoc(player));
+                    Location eyeLocation = player.getEyeLocation().clone(); eyeLocation.setPitch(0);
+                    terminal.setRotation(180.0f - eyeLocation.getYaw(), -15.0f);
+                    terminal.getHologram().update();
                     for (Element<?, ?> element : terminal.getElements()) {
                         element.updateLocation();
                     }

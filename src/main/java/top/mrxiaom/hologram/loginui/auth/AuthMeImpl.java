@@ -55,7 +55,9 @@ public class AuthMeImpl implements IAuth, Listener {
 
     @Override
     public boolean doRegister(@NotNull Player player, @NotNull String password) {
-        return api.registerPlayer(player.getName(), password);
+        if (api.isRegistered(player.getName())) return false;
+        api.forceRegister(player, password, true);
+        return true;
     }
 
     @Override
