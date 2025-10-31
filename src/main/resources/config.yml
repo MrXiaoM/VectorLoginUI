@@ -1,0 +1,9 @@
+
+# 登录插件适配器类名，该选项重启服务器生效
+# 若设为 auto，则根据已加载插件自动获取
+auth-api: auto
+
+# 输入框的密码长度限制
+password-length:
+  min: 8
+  max: 30

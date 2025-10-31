@@ -6,7 +6,7 @@ depend:
   - VectorDisplays
   - packetevents
 softdepend:
-  - PlaceholderAPI
+  - AuthMe
 authors: [ MrXiaoM ]
 folia-supported: true
 commands:
