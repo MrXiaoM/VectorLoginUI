@@ -112,6 +112,7 @@ public class TerminalRegister extends AbstractKeyboardTerminal<TerminalRegister>
             }
             password = "";
             refreshInput();
+            labelInput.update();
             return;
         }
         int length = password.length();
