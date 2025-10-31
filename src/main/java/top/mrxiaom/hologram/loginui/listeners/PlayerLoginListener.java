@@ -1,7 +1,6 @@
 package top.mrxiaom.hologram.loginui.listeners;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -15,6 +14,7 @@ import top.mrxiaom.hologram.loginui.gui.TerminalRegister;
 import top.mrxiaom.hologram.vector.displays.TerminalManager;
 import top.mrxiaom.hologram.vector.displays.ui.api.Element;
 import top.mrxiaom.hologram.vector.displays.ui.api.Terminal;
+import top.mrxiaom.hologram.vector.displays.utils.QuaternionUtils;
 
 import java.util.List;
 
@@ -32,10 +32,11 @@ public class PlayerLoginListener implements Listener {
                 if (viewers.isEmpty()) continue;
                 Player player = viewers.get(0);
                 if (terminal.getLocation().distance(player.getLocation()) > 3) {
-                    terminal.setLocation(AbstractKeyboardTerminal.defineTerminalLoc(player));
-                    Location eyeLocation = player.getEyeLocation().clone(); eyeLocation.setPitch(0);
-                    terminal.setRotation(180.0f - eyeLocation.getYaw(), -15.0f);
+                    terminal.setRotation(180.0f - player.getLocation().getYaw(), -15.0f);
+                    // 玄学问题: 一定要额外旋转 90 度才能正常显示
+                    terminal.getHologram().setLeftRotation(QuaternionUtils.fromEulerYXZtoQuaternion(90.0f - player.getLocation().getYaw(), -15.0f, 0));
                     terminal.getHologram().update();
+                    terminal.setLocation(AbstractKeyboardTerminal.defineTerminalLoc(player));
                     for (Element<?, ?> element : terminal.getElements()) {
                         element.updateLocation();
                     }
