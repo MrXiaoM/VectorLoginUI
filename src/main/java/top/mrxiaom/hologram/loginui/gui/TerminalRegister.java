@@ -50,7 +50,7 @@ public class TerminalRegister extends AbstractKeyboardTerminal<TerminalRegister>
     protected void initPage(PageBuilder builder) {
         builder.addElement(new Label("title"), e -> {
             e.setScale(0.5f);
-            e.setText("<#2287C4><b>注册服务器账号");
+            e.setText("<#24D6E2><b>注册服务器账号");
             e.setFullBrightness();
             e.setAlign(EnumAlign.CENTER);
             e.setPos(0, -18);

@@ -41,7 +41,7 @@ public class TerminalLogin extends AbstractKeyboardTerminal<TerminalLogin> {
     protected void initPage(PageBuilder builder) {
         builder.addElement(new Label("title"), e -> {
             e.setScale(0.5f);
-            e.setText("<#2287C4><b>登录到服务器");
+            e.setText("<#24D6E2><b>登录到服务器");
             e.setFullBrightness();
             e.setAlign(EnumAlign.CENTER);
             e.setPos(0, -18);
