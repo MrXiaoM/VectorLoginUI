@@ -44,7 +44,7 @@ public abstract class AbstractKeyboardTerminal<This extends AbstractKeyboardTerm
         applyPage("keyboard");
     }
 
-    protected static Location defineTerminalLoc(Player player) {
+    public static Location defineTerminalLoc(Player player) {
         Location eyeLocation = player.getEyeLocation().clone(); eyeLocation.setPitch(0);
         Location loc = player.getLocation().clone();
         loc.setY(loc.getY() + 1);
